@@ -5,7 +5,7 @@ autoinstall:
     # Stop ssh for packer
     - sudo systemctl stop ssh
     - sudo systemctl stop open-vm-tools
-  locale: en_US
+  locale: en_GB
   keyboard:
     layout: en
     variant: uk

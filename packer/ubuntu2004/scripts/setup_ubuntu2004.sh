@@ -2,13 +2,18 @@
 apt-get update
 apt-get upgrade -y
 
-# Add vcokltfre user to sudoers.
-echo "vcokltfre        ALL=(ALL)       NOPASSWD:ALL" >> /etc/sudoers
+# Add setup user to sudoers.
+echo "setup        ALL=(ALL)       NOPASSWD:ALL" >> /etc/sudoers
 sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
 apt install neofetch -y
 
 apt-get install -y python3-pip nfs-common
+
+sudo adduser --disabled-password --gecos "" vcokltfre
+
+mkdir /home/vcokltfre/.ssh
+curl -o /home/vcokltfre/.ssh/authorized_keys https://github.com/vcokltfre.keys
 
 # Install VMWare Guestinfo Cloud-init source
 curl -sSL https://raw.githubusercontent.com/vmware/cloud-init-vmware-guestinfo/master/install.sh | sh -
