@@ -30,4 +30,4 @@ jobs:
       - name: Build template
         run: |
           cd ./packer/ubuntu2004
-          packer build -force ubuntu-2004.json.pkr.hcl -var "VCSA_PASSWORD=${{ secrets.VCSA_PASSWORD }}"
+          packer build -force -var "VCSA_PASSWORD=${{ secrets.VCSA_PASSWORD }}" ubuntu-2004.json.pkr.hcl
