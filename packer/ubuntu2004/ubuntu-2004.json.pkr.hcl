@@ -21,7 +21,7 @@ variable "vcenter_dc" {
 
 variable "vcenter_datastore" {
   type    = string
-  default = "datatstore1"
+  default = "datastore1"
 }
 
 variable "vcenter_network" {
