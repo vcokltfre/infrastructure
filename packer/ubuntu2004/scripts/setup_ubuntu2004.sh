@@ -11,6 +11,7 @@ apt install neofetch -y
 apt-get install -y python3-pip nfs-common
 
 sudo adduser --disabled-password --gecos "" vcokltfre
+sudo usermod -aG sudo vcokltfre
 
 mkdir /home/vcokltfre/.ssh
 curl -o /home/vcokltfre/.ssh/authorized_keys https://github.com/vcokltfre.keys
