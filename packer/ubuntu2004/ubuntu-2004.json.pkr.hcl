@@ -79,12 +79,12 @@ source "vsphere-iso" "vm" {
   boot_wait = "5s"
 
   ip_wait_timeout  = "3600s"
-  shutdown_command = "echo 'setup' | sudo -S shutdown -P now"
+  shutdown_command = "echo 'system' | sudo -S shutdown -P now"
   ssh_password     = "changeme"
   ssh_port         = 22
   ssh_timeout      = "10m"
   ssh_handshake_attempts = 100
-  ssh_username     = "setup"
+  ssh_username     = "system"
 }
 
 build {

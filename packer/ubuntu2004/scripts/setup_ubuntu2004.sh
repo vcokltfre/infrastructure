@@ -2,8 +2,8 @@
 apt-get update
 apt-get upgrade -y
 
-# Add setup user to sudoers.
-echo "setup        ALL=(ALL)       NOPASSWD:ALL" >> /etc/sudoers
+# Add system user to sudoers.
+echo "system        ALL=(ALL)       NOPASSWD:ALL" >> /etc/sudoers
 sed -i "s/^.*requiretty/#Defaults requiretty/" /etc/sudoers
 
 apt install neofetch -y
