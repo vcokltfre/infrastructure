@@ -82,7 +82,7 @@ source "vsphere-iso" "vm" {
   shutdown_command = "echo 'setup' | sudo -S shutdown -P now"
   ssh_password     = "changeme"
   ssh_port         = 22
-  ssh_timeout      = "20m"
+  ssh_timeout      = "10m"
   ssh_handshake_attempts = 100
   ssh_username     = "setup"
 }
