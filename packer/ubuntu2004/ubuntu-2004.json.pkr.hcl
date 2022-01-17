@@ -4,9 +4,13 @@ variable "vcenter_address" {
   default = "vcsa.aljb.dev"
 }
 
+variable "vcsa_password" {
+  description = "Password for vCenter"
+}
+
 locals {
   vcenter_user     = "administrator@vsphere.local"
-  vcenter_password = "{{.VCSA_PASSWORD}}"
+  vcenter_password = var.vcsa_password
 }
 
 # Location settings
