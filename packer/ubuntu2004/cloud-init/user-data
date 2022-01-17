@@ -1,0 +1,26 @@
+#cloud-config
+autoinstall:
+  version: 1
+  early-commands:
+    # Stop ssh for packer
+    - sudo systemctl stop ssh
+    - sudo systemctl stop open-vm-tools
+  locale: en_US
+  keyboard:
+    layout: en
+    variant: uk
+  identity:
+    hostname: system
+    username: vcokltfre
+#mkpasswd -m sha-512 --rounds=4096
+    password: '$6$rounds=4096$ceVsPyx/sBN.hzTn$M9OloSFyZvZyD6vZ3hBRo7YgT2LBxLZySeabfog98OLKRnPLqXt9ldVKniJ/DIyabr8NZfnhuDdoSWLNczp4N1'
+  ssh:
+    install-server: yes
+    allow-pw: yes
+  storage:
+    layout:
+      name: direct
+  apt:
+    primary:
+      - arches: [default]
+        uri: http://mirrors.ukfast.co.uk/sites/archive.ubuntu.com/
