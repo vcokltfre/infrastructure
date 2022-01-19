@@ -7,6 +7,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - packer/ubuntu2004/**
 
 jobs:
   build:
