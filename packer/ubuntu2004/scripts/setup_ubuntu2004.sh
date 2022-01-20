@@ -16,6 +16,10 @@ sudo usermod -aG sudo vcokltfre
 mkdir /home/vcokltfre/.ssh
 curl -o /home/vcokltfre/.ssh/authorized_keys https://github.com/vcokltfre.keys
 
+# Set up for hashicorp packages
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
 # Install VMWare Guestinfo Cloud-init source
 curl -sSL https://raw.githubusercontent.com/vmware/cloud-init-vmware-guestinfo/master/install.sh | sh -
 
