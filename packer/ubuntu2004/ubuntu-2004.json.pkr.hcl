@@ -31,7 +31,7 @@ variable "vcenter_network" {
 
 variable "vm_name" {
   type    = string
-  default = "ubuntu2004-vco-template"
+  default = "ubuntu20043-vco-template"
 }
 
 source "vsphere-iso" "vm" {
