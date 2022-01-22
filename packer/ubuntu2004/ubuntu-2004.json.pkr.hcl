@@ -51,10 +51,10 @@ source "vsphere-iso" "vm" {
   guest_os_type        = "ubuntu64Guest"
   network_adapters {
     network      = var.vcenter_network
-    network_card = "e1000"
+    network_card = "vmxnet3"
   }
-  iso_url             = "https://releases.ubuntu.com/20.04.2/ubuntu-20.04.2-live-server-amd64.iso"
-  iso_checksum        = "file:https://releases.ubuntu.com/20.04.2/SHA256SUMS"
+  iso_url             = "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
+  iso_checksum        = "file:https://releases.ubuntu.com/20.04.3/SHA256SUMS"
   convert_to_template = true
   storage {
     disk_size             = 40960
