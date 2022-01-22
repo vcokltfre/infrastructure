@@ -31,7 +31,7 @@ variable "vcenter_network" {
 
 variable "vm_name" {
   type    = string
-  default = "ubuntu20043-vco-template"
+  default = "ubuntu2004-vco-template"
 }
 
 source "vsphere-iso" "vm" {
@@ -53,8 +53,8 @@ source "vsphere-iso" "vm" {
     network      = var.vcenter_network
     network_card = "e1000"
   }
-  iso_url             = "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
-  iso_checksum        = "file:https://releases.ubuntu.com/20.04.3/SHA256SUMS"
+  iso_url             = "https://releases.ubuntu.com/20.04.2/ubuntu-20.04.2-live-server-amd64.iso"
+  iso_checksum        = "file:https://releases.ubuntu.com/20.04.2/SHA256SUMS"
   convert_to_template = true
   storage {
     disk_size             = 40960
