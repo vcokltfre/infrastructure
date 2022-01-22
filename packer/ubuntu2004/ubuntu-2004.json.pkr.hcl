@@ -51,7 +51,7 @@ source "vsphere-iso" "vm" {
   guest_os_type        = "ubuntu64Guest"
   network_adapters {
     network      = var.vcenter_network
-    network_card = "E1000"
+    network_card = "e1000"
   }
   iso_url             = "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
   iso_checksum        = "file:https://releases.ubuntu.com/20.04.3/SHA256SUMS"
