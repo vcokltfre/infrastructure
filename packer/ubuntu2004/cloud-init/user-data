@@ -5,6 +5,8 @@ autoinstall:
     # Stop ssh for packer
     - sudo systemctl stop ssh
     - sudo systemctl stop open-vm-tools
+  late-commands:
+    - 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
   locale: en_GB
   keyboard:
     layout: en
