@@ -47,7 +47,7 @@ source "vsphere-iso" "vm" {
 
   CPUs                 = 2
   RAM                  = 4096
-  disk_controller_type = ["pvscsi"]
+  disk_controller_type = ["scsi"]
   guest_os_type        = "ubuntu64Guest"
   network_adapters {
     network      = var.vcenter_network
