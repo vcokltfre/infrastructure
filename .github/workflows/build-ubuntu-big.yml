@@ -9,7 +9,7 @@ on:
       - master
     paths:
       - packer/ubuntu2004/cloud-init/**
-      - packer/ubuntu2004/ubuntu-2004.json.pkr.hcl
+      - packer/ubuntu2004/ubuntu-2004-big.json.pkr.hcl
       - packer/ubuntu2004/scripts/**
 
 jobs:
@@ -34,4 +34,4 @@ jobs:
       - name: Build template
         run: |
           cd ./packer/ubuntu2004
-          packer build -force -var "vcsa_password=${{ secrets.VCSA_PASSWORD }}" ubuntu-2004.json.pkr.hcl
+          packer build -force -var "vcsa_password=${{ secrets.VCSA_PASSWORD }}" ubuntu-2004-big.json.pkr.hcl
