@@ -9,7 +9,7 @@ variable "vcsa_password" {
 }
 
 locals {
-  vcenter_user     = "administrator@vsphere.local"
+  vcenter_user     = "administrator@vcsa.aljb.dev"
   vcenter_password = var.vcsa_password
 }
 
