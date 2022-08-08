@@ -68,8 +68,21 @@ source "vsphere-iso" "vm" {
   cd_label = "cidata"
 
   boot_command = [
-    "<esc><esc><esc>",
-    "<enter><wait>",
+    "<esc><esc><esc><esc>e<wait>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
+    "<del><del><del><del><del><del><del><del>",
     "/casper/vmlinuz ",
     "root=/dev/sr0 ",
     "initrd=/casper/initrd ",
