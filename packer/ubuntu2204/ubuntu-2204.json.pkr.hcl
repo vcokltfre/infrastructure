@@ -85,7 +85,7 @@ source "vsphere-iso" "vm" {
     "<del><del><del><del><del><del><del><del>",
     "<del><del><del><del><del><del><del><del>",
     "linux /casper/vmlinuz --- autoinstall<enter><wait>",
-    "initrd /casper/initrd ",
+    "initrd /casper/initrd<enter><wait>",
     "boot<enter>",
     "<enter><f10><wait>"
   ]
