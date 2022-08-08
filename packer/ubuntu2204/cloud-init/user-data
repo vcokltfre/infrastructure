@@ -1,0 +1,28 @@
+#cloud-config
+autoinstall:
+  version: 1
+  early-commands:
+    # Stop ssh for packer
+    - sudo systemctl stop ssh
+    - sudo systemctl stop open-vm-tools
+  late-commands:
+    - 'sed -i "s/dhcp4: true/&\n      dhcp-identifier: mac/" /target/etc/netplan/00-installer-config.yaml'
+  locale: en_GB
+  keyboard:
+    layout: en
+    variant: uk
+  identity:
+    hostname: system
+    username: system
+#mkpasswd -m sha-512 --rounds=4096
+    password: '$6$rounds=4096$ceVsPyx/sBN.hzTn$M9OloSFyZvZyD6vZ3hBRo7YgT2LBxLZySeabfog98OLKRnPLqXt9ldVKniJ/DIyabr8NZfnhuDdoSWLNczp4N1'
+  ssh:
+    install-server: yes
+    allow-pw: yes
+  storage:
+    layout:
+      name: direct
+  apt:
+    primary:
+      - arches: [default]
+        uri: http://archive.ubuntu.com/ubuntu
