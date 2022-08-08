@@ -1,0 +1,37 @@
+name: Build Ubuntu 22 Template
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+  push:
+    branches:
+      - master
+    paths:
+      - packer/ubuntu2204/cloud-init/**
+      - packer/ubuntu2204/ubuntu-2204.json.pkr.hcl
+      - packer/ubuntu2204/scripts/**
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install packer
+        run: |
+          curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+          sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+          sudo apt-get update && sudo apt-get install packer=1.7.8 -y
+          sudo apt install xorriso -y
+
+      - name: Install tailscale
+        run: |
+          curl -fsSL https://tailscale.com/install.sh | sh
+          sudo tailscale up --accept-routes --authkey ${{ secrets.TAILSCALE_KEY }}
+
+      - name: Build template
+        run: |
+          cd ./packer/ubuntu2204
+          packer build -force -var "vcsa_password=${{ secrets.VCSA_PASSWORD }}" ubuntu-2204.json.pkr.hcl
